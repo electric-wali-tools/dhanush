@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DHANUSH | Young Boys Streetwear – T-Shirts, Shirts, Lowers, Jeans & Hoodies</title>
+<meta name="description" content="DHANUSH – trendy clothing for young boys. Oversized T-shirts, casual shirts, joggers/lowers, jeans and hoodies at student-friendly prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* DHANUSH – Glassmorphism streetwear theme */
+:root{
+  --lime:#c6ff3d; --mint:#3dffb0; --pink:#ff4d8d; --violet:#7c5cff; --orange:#ff9a3d;
+  --bg:#0a0614; --text:#f5f3ff; --muted:#b4acd0;
+  --glass:rgba(255,255,255,.08); --glass-2:rgba(255,255,255,.14);
+  --border:rgba(255,255,255,.2); --hi:rgba(255,255,255,.38);
+  --blur:blur(18px) saturate(170%);
+  --shadow:0 12px 40px rgba(0,0,0,.4);
+  --grad:linear-gradient(135deg,#c6ff3d,#3dffb0);
+  --grad-text:linear-gradient(100deg,#ff4d8d,#ff9a3d 50%,#c6ff3d);
+  --r-sm:14px; --r-md:22px; --r-lg:30px; --t:all .3s ease;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit;cursor:pointer} ul{list-style:none} img{max-width:100%;display:block}
+button{font-family:inherit}
+.container{width:100%;max-width:1280px;margin:0 auto;padding:0 20px}
+.text-center{text-align:center} .muted{color:var(--muted);font-size:13px}
+[hidden]{display:none!important}
+
+/* background */
+.bg-orbs{position:fixed;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(1000px 700px at 85% -10%,#1d0f3d,transparent 60%),linear-gradient(180deg,#0a0614,#0e0820)}
+.bg-orbs span{position:absolute;border-radius:50%;filter:blur(95px);animation:drift 24s ease-in-out infinite alternate}
+.bg-orbs span:nth-child(1){width:540px;height:540px;background:var(--pink);top:-150px;left:-140px;opacity:.38}
+.bg-orbs span:nth-child(2){width:620px;height:620px;background:var(--violet);top:28%;right:-220px;opacity:.45;animation-delay:-7s}
+.bg-orbs span:nth-child(3){width:480px;height:480px;background:var(--lime);bottom:-180px;left:25%;opacity:.2;animation-delay:-12s}
+.bg-orbs span:nth-child(4){width:340px;height:340px;background:var(--orange);top:58%;left:-110px;opacity:.2;animation-delay:-3s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(60px,80px) scale(1.15)}}
+
+/* glass */
+.glass,.product-card,.cart-item,.cart-drawer,.offers-box,.size-wrap,.review,.contact-box,.modal-content,.cat-info,.toast{
+  background:var(--glass);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);
+  border:1px solid var(--border);box-shadow:var(--shadow),inset 0 1px 0 var(--hi)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;border:1px solid transparent;font-weight:600;font-size:14px;cursor:pointer;transition:var(--t);white-space:nowrap}
+.btn-primary{background:var(--grad);color:#0b0618;box-shadow:0 8px 24px rgba(198,255,61,.3),inset 0 1px 0 rgba(255,255,255,.6)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(61,255,176,.45)}
+.btn-outline{background:var(--glass);border-color:var(--border);color:var(--text);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur)}
+.btn-outline:hover{background:var(--glass-2);border-color:var(--lime)}
+.btn-whatsapp{background:rgba(37,211,102,.28);border-color:rgba(37,211,102,.6);color:#fff}
+.btn-whatsapp:hover{background:rgba(37,211,102,.5)}
+.btn-lg{padding:15px 30px;font-size:15px} .btn-sm{padding:10px 16px;font-size:13px} .btn-block{width:100%}
+
+/* top bar + header */
+.top-bar{background:rgba(255,255,255,.05);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);border-bottom:1px solid var(--border);font-size:12.5px;color:var(--muted)}
+.top-bar-content{display:flex;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+.top-bar i{color:var(--lime);margin-right:6px} .top-bar b{color:var(--lime)}
+.site-header{position:sticky;top:10px;z-index:100;margin:12px auto 0;width:calc(100% - 24px);max-width:1280px;background:rgba(14,8,32,.5);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);border:1px solid var(--border);border-radius:999px;box-shadow:var(--shadow),inset 0 1px 0 var(--hi)}
+.header-container{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:10px;padding-bottom:10px}
+.brand-logo{display:flex;align-items:center;gap:10px}
+.logo-icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:var(--grad);color:#0b0618;font-size:18px;box-shadow:0 0 22px rgba(198,255,61,.5),inset 0 1px 0 rgba(255,255,255,.6)}
+.logo-title{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:2px;line-height:1}
+.accent-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav-menu{display:flex;gap:4px}
+.nav-menu a{display:block;padding:8px 16px;border-radius:999px;font-size:13.5px;font-weight:500;color:var(--muted);transition:var(--t);white-space:nowrap}
+.nav-menu a:hover,.nav-menu a.active{color:#fff;background:var(--glass-2);box-shadow:inset 0 1px 0 var(--hi)}
+.header-actions{display:flex;gap:8px;align-items:center}
+.icon-btn,.mobile-toggle,.close-drawer{position:relative;width:42px;height:42px;border-radius:50%;border:1px solid var(--border);background:var(--glass);color:#fff;font-size:16px;cursor:pointer;display:grid;place-items:center;transition:var(--t)}
+.icon-btn:hover{background:var(--glass-2);border-color:var(--lime)}
+.cart-btn{background:rgba(198,255,61,.15);border-color:rgba(198,255,61,.5)}
+.badge-count{position:absolute;top:-4px;right:-4px;min-width:19px;height:19px;border-radius:99px;background:var(--pink);color:#fff;font-size:10.5px;font-weight:700;display:none;place-items:center;padding:0 4px}
+.mobile-toggle{display:none}
+
+/* mobile drawer */
+.mobile-drawer{position:fixed;top:0;right:-100%;width:min(86%,340px);height:100%;z-index:300;background:rgba(10,6,20,.75);-webkit-backdrop-filter:blur(26px) saturate(180%);backdrop-filter:blur(26px) saturate(180%);border-left:1px solid var(--border);padding:22px;display:flex;flex-direction:column;gap:18px;transition:right .4s ease}
+.mobile-drawer.active{right:0}
+.drawer-header{display:flex;justify-content:space-between;align-items:center}
+.drawer-menu{display:flex;flex-direction:column;gap:6px;flex:1}
+.drawer-menu a{display:flex;gap:12px;align-items:center;padding:13px 14px;border-radius:var(--r-sm);background:var(--glass);font-size:14px}
+.drawer-menu i{color:var(--lime);width:18px;text-align:center}
+
+/* hero */
+.hero-section{padding:22px 0 14px}
+.hero-slider{position:relative;width:calc(100% - 24px);max-width:1280px;margin:0 auto;height:640px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow),inset 0 1px 0 var(--hi);background:linear-gradient(135deg,#3a1257,#12163d)}
+.hero-slide{position:absolute;inset:0;display:flex;align-items:center;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s}
+.hero-slide.active{opacity:1;visibility:visible}
+.slide-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.07);transition:transform 7s ease}
+.hero-slide.active .slide-img{transform:scale(1)}
+.slide-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,6,20,.85),rgba(10,6,20,.35) 60%,rgba(124,92,255,.25))}
+.slide-content{position:relative;z-index:2;margin-left:56px;max-width:560px;padding:38px 40px;border-radius:var(--r-lg)}
+.hero-badge{display:inline-flex;gap:8px;align-items:center;padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:600;background:rgba(198,255,61,.14);border:1px solid rgba(198,255,61,.5);color:var(--lime);margin-bottom:16px}
+.slide-content h1,.slide-content h2{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(46px,7vw,86px);line-height:.98;letter-spacing:1px;margin-bottom:14px}
+.gradient-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.slide-content p{color:#ddd6f5;font-size:15px;margin-bottom:24px}
+.cta-group{display:flex;gap:12px;flex-wrap:wrap}
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;border:1px solid var(--border);background:var(--glass-2);color:#fff;cursor:pointer;-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur)}
+.slider-arrow:hover{background:rgba(198,255,61,.35)} .prev-arrow{left:14px} .next-arrow{right:14px}
+.slider-dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);z-index:5;display:flex;gap:8px;padding:8px 14px;border-radius:999px;background:var(--glass);border:1px solid var(--border);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur)}
+.dot{width:9px;height:9px;border-radius:99px;background:rgba(255,255,255,.4);cursor:pointer;transition:var(--t)}
+.dot.active{width:26px;background:var(--lime);box-shadow:0 0 12px var(--lime)}
+.hero-stats{position:absolute;right:34px;bottom:34px;z-index:4;display:flex;gap:26px;padding:16px 26px;border-radius:var(--r-md)}
+.hero-stats div{display:flex;flex-direction:column;text-align:center;line-height:1.2}
+.hero-stats b{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:1px;color:var(--lime);font-weight:400}
+.hero-stats b i{font-size:15px;margin-left:3px;color:var(--orange)}
+.hero-stats span{font-size:11.5px;color:var(--muted)}
+
+/* marquee */
+.marquee{width:calc(100% - 24px);max-width:1280px;margin:18px auto 0;border-radius:999px;overflow:hidden;padding:12px 0}
+.marquee-track{display:flex;gap:28px;align-items:center;width:max-content;animation:scroll 26s linear infinite;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:3px}
+.marquee-track i{color:var(--lime);font-size:15px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:76px 0}
+.hero-section{padding:22px 0 14px}
+.section-header{max-width:720px;margin:0 auto 40px}
+.sub-heading{display:inline-block;padding:5px 14px;border-radius:999px;font-size:11.5px;letter-spacing:2.2px;font-weight:600;color:var(--lime);background:rgba(198,255,61,.1);border:1px solid rgba(198,255,61,.3);margin-bottom:14px}
+.fluid-h2{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(36px,5vw,58px);line-height:1.05;letter-spacing:1px;margin-bottom:10px}
+.fluid-p{color:var(--muted);font-size:15.5px}
+
+/* categories */
+.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.cat-card{position:relative;border-radius:var(--r-md);overflow:hidden;aspect-ratio:3/4;border:1px solid var(--border);box-shadow:var(--shadow);background:linear-gradient(135deg,rgba(255,77,141,.3),rgba(124,92,255,.4));transition:var(--t);display:block}
+.cat-card:hover{transform:translateY(-8px);border-color:rgba(198,255,61,.6)}
+.cat-img,.cat-img img{width:100%;height:100%;object-fit:cover}
+.cat-img{position:absolute;inset:0;transition:transform .6s ease} .cat-card:hover .cat-img{transform:scale(1.08)}
+.cat-info{position:absolute;left:10px;right:10px;bottom:10px;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:18px;background:rgba(10,6,20,.45)}
+.cat-info>i{color:var(--lime);font-size:18px} .cat-info div{flex:1;line-height:1.25} .cat-info b{display:block;font-size:13.5px} .cat-info small{color:var(--muted);font-size:11.5px}
+.cat-info .arrow{width:28px;height:28px;border-radius:50%;background:var(--grad);color:#0b0618;display:grid;place-items:center;font-size:11px}
+
+/* shop */
+.shop-toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:10px 12px;border-radius:var(--r-md);margin-bottom:14px}
+.filter-bar{display:flex;gap:4px;flex-wrap:wrap}
+.filter-btn{padding:9px 16px;border-radius:999px;border:0;background:transparent;color:var(--muted);font-size:13px;font-weight:500;cursor:pointer;transition:var(--t)}
+.filter-btn:hover{color:#fff}
+.filter-btn.active{background:var(--grad);color:#0b0618;font-weight:600;box-shadow:0 6px 18px rgba(198,255,61,.3)}
+.tool-right{display:flex;gap:10px;flex-wrap:wrap}
+.search-box{display:flex;align-items:center;gap:8px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid var(--border)}
+.search-box i{color:var(--muted);font-size:13px}
+.search-box input{background:transparent;border:0;outline:0;color:#fff;font-family:inherit;font-size:13.5px;padding:11px 0;width:210px}
+.form-control{padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid var(--border);color:#fff;font-family:inherit;font-size:13.5px;outline:0;color-scheme:dark;transition:var(--t)}
+.form-control:focus{border-color:var(--lime);box-shadow:0 0 0 4px rgba(198,255,61,.15)}
+select.form-control{border-radius:999px;padding:10px 16px} select.form-control option{background:#14092b;color:#fff}
+.result-count{color:var(--muted);font-size:13px;margin:6px 4px 18px}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.product-card{border-radius:var(--r-md);overflow:hidden;transition:var(--t);display:flex;flex-direction:column}
+.product-card:hover{transform:translateY(-8px);border-color:rgba(198,255,61,.5);box-shadow:0 24px 60px rgba(124,92,255,.3),inset 0 1px 0 var(--hi)}
+.p-img{position:relative;margin:8px 8px 0;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,rgba(255,77,141,.28),rgba(124,92,255,.35))}
+.p-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease} .product-card:hover .p-img img{transform:scale(1.07)}
+.img-fail::after{content:"\f553";font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;inset:0;display:grid;place-items:center;font-size:54px;color:rgba(255,255,255,.35)}
+.p-badge,.p-off{position:absolute;top:10px;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:600;-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);z-index:2}
+.p-badge{left:10px;background:rgba(255,77,141,.35);border:1px solid rgba(255,77,141,.7);color:#ffe0ec}
+.p-off{right:52px;background:rgba(198,255,61,.25);border:1px solid rgba(198,255,61,.6);color:var(--lime)}
+.p-off.inline{position:static;display:inline-block;margin-left:6px}
+.wish-btn{position:absolute;top:8px;right:8px;z-index:3;width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:rgba(10,6,20,.45);color:#fff;cursor:pointer;-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);transition:var(--t)}
+.wish-btn.on,.wish-btn:hover{color:var(--pink);border-color:var(--pink)}
+.quick-btn{position:absolute;left:10px;right:10px;bottom:10px;z-index:3;padding:9px;border-radius:999px;border:1px solid var(--border);background:rgba(10,6,20,.55);color:#fff;font-size:12.5px;font-weight:500;cursor:pointer;-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);transform:translateY(60px);opacity:0;transition:var(--t)}
+.product-card:hover .quick-btn{transform:none;opacity:1}
+.p-info{padding:14px 16px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.p-info small{color:var(--muted);font-size:11.5px;letter-spacing:1px;text-transform:uppercase}
+.p-info h3{font-size:15px;font-weight:600;line-height:1.3}
+.p-price{display:flex;align-items:baseline;gap:8px;margin:2px 0 8px;margin-top:auto}
+.p-price b{font-family:'Bebas Neue',sans-serif;font-size:27px;font-weight:400;letter-spacing:1px;color:var(--lime)}
+.p-price s{color:var(--muted);font-size:13px} .p-price.big b{font-size:38px}
+.empty{grid-column:1/-1;text-align:center;padding:40px;border-radius:var(--r-md);color:var(--muted)}
+
+/* lookbook */
+.look-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:260px 260px;gap:18px}
+.look{position:relative;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);background:linear-gradient(135deg,rgba(255,77,141,.3),rgba(124,92,255,.4))}
+.look.big{grid-row:span 2}
+.look img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease} .look:hover img{transform:scale(1.07)}
+.look-cap{position:absolute;left:12px;bottom:12px;padding:10px 16px;border-radius:16px;background:rgba(10,6,20,.5);display:flex;flex-direction:column;line-height:1.3}
+.look-cap b{font-size:14px} .look-cap span{font-size:12px;color:var(--lime)}
+
+/* offers */
+.offers-box{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center;padding:48px;border-radius:var(--r-lg);background:linear-gradient(135deg,rgba(255,77,141,.16),rgba(124,92,255,.2));position:relative;overflow:hidden}
+.coupon{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:22px}
+.coupon-code{padding:12px 22px;border-radius:14px;border:2px dashed var(--lime);font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:4px;color:var(--lime);background:rgba(198,255,61,.08)}
+.offer-perks{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.perk{padding:18px;border-radius:var(--r-md);background:rgba(255,255,255,.08);border:1px solid var(--border);display:flex;flex-direction:column;gap:2px}
+.perk i{font-size:22px;color:var(--lime);margin-bottom:6px} .perk b{font-size:14px} .perk span{font-size:12px;color:var(--muted)}
+
+/* sizes */
+.size-wrap{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:34px;border-radius:var(--r-lg);max-width:960px;margin:0 auto}
+.size-col h3{font-size:16px;margin-bottom:14px} .size-col h3 i{color:var(--lime);margin-right:8px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border)} th{color:var(--lime);font-weight:600;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+td:first-child{font-weight:600}
+
+/* reviews */
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.review{padding:28px;border-radius:var(--r-md);transition:var(--t)} .review:hover{transform:translateY(-6px)}
+.stars{color:var(--orange);letter-spacing:3px;margin-bottom:12px}
+.review p{color:#ddd6f5;font-size:14.5px;margin-bottom:18px}
+.who{display:flex;gap:12px;align-items:center} .who small{display:block;color:var(--muted);font-size:12px}
+.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--grad);color:#0b0618;font-weight:700}
+
+/* contact */
+.contact-box{max-width:760px;margin:0 auto;text-align:center;padding:48px;border-radius:var(--r-lg)}
+.news-form{display:flex;gap:12px;margin-top:24px;justify-content:center;flex-wrap:wrap}
+.news-form .form-control{flex:1;min-width:220px;border-radius:999px;padding:14px 20px}
+
+/* footer */
+.site-footer{margin-top:30px;background:rgba(255,255,255,.04);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);border-top:1px solid var(--border);padding-top:56px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:34px;padding-bottom:36px}
+.footer-col h4{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:22px;letter-spacing:1.5px;margin-bottom:14px}
+.footer-col p{color:var(--muted);font-size:13.5px;margin-bottom:10px} .footer-col p i{color:var(--lime);margin-right:8px}
+.footer-logo{margin-bottom:14px} .footer-links{display:grid;gap:10px} .footer-links a{color:var(--muted);font-size:13.5px} .footer-links a:hover{color:var(--lime)}
+.social-links{display:flex;gap:10px;margin-top:14px}
+.social-links a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--glass);border:1px solid var(--border);transition:var(--t)} .social-links a:hover{background:var(--grad);color:#0b0618;transform:translateY(-3px)}
+.footer-bottom{border-top:1px solid var(--border);padding:16px 0;font-size:13px;color:var(--muted)}
+
+/* cart drawer */
+.overlay{position:fixed;inset:0;z-index:250;background:rgba(3,1,10,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:var(--t)}
+.overlay.active{opacity:1;visibility:visible}
+.cart-drawer{position:fixed;top:10px;right:-110%;bottom:10px;width:min(440px,calc(100% - 20px));z-index:260;border-radius:var(--r-lg);background:rgba(16,9,34,.7);display:flex;flex-direction:column;transition:right .45s ease;overflow:hidden}
+.cart-drawer.active{right:10px}
+.cart-head{display:flex;justify-content:space-between;align-items:center;padding:20px 22px 12px}
+.cart-head h3{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:28px;letter-spacing:1.5px} .cart-head i{color:var(--lime);margin-right:8px}
+.ship-progress{padding:0 22px 14px;font-size:13px;color:var(--muted)} .ship-progress b{color:var(--lime)}
+.bar{height:8px;border-radius:99px;background:rgba(255,255,255,.12);margin-top:8px;overflow:hidden} .bar span{display:block;height:100%;width:0;background:var(--grad);border-radius:99px;transition:width .5s ease}
+.cart-items{flex:1;overflow-y:auto;padding:4px 18px;display:flex;flex-direction:column;gap:12px}
+.cart-item{display:flex;gap:12px;padding:10px;border-radius:18px;box-shadow:none}
+.ci-img{width:70px;height:84px;border-radius:12px;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,rgba(255,77,141,.3),rgba(124,92,255,.4))} .ci-img img{width:100%;height:100%;object-fit:cover}
+.ci-info{flex:1;display:flex;flex-direction:column;gap:2px;font-size:13.5px} .ci-info small{color:var(--muted)}
+.qty{display:inline-flex;align-items:center;gap:10px;margin-top:6px;padding:2px;border-radius:99px;border:1px solid var(--border);width:fit-content}
+.qty button{width:26px;height:26px;border-radius:50%;border:0;background:var(--glass-2);color:#fff;cursor:pointer} .qty span{min-width:14px;text-align:center;font-size:13px}
+.ci-right{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end} .ci-right b{color:var(--lime)} .rm{background:none;border:0;color:var(--muted);cursor:pointer} .rm:hover{color:var(--pink)}
+.cart-empty{text-align:center;padding:60px 10px;color:var(--muted)} .cart-empty i{font-size:46px;color:rgba(255,255,255,.25);margin-bottom:12px} .cart-empty p{margin-bottom:14px}
+.cart-foot{padding:16px 22px 20px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:10px}
+.coupon-row{display:flex;gap:8px} .coupon-row .form-control{flex:1;min-width:0;border-radius:999px;padding:10px 16px}
+.sum-row{display:flex;justify-content:space-between;font-size:14px;color:var(--muted)} .sum-row b{color:#fff}
+.sum-row.total{font-size:17px;color:#fff} .sum-row.total b{color:var(--lime);font-size:22px}
+.cart-foot .muted{text-align:center;font-size:11.5px}
+
+/* quick view */
+.modal-backdrop{position:fixed;inset:0;z-index:400;display:grid;place-items:center;padding:16px;background:rgba(3,1,10,.6);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:var(--t);overflow-y:auto}
+.modal-backdrop.active{opacity:1;visibility:visible}
+.modal-content{position:relative;width:100%;max-width:880px;border-radius:var(--r-lg);padding:22px;background:rgba(18,10,38,.65);transform:translateY(20px) scale(.97);transition:var(--t)}
+.modal-backdrop.active .modal-content{transform:none}
+.modal-close{position:absolute;top:14px;right:14px;z-index:5;width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:rgba(10,6,20,.55);color:#fff;cursor:pointer}
+.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.q-img{aspect-ratio:4/5;border-radius:20px;overflow:hidden;position:relative;background:linear-gradient(135deg,rgba(255,77,141,.3),rgba(124,92,255,.4))} .q-img img{width:100%;height:100%;object-fit:cover}
+.q-info{display:flex;flex-direction:column;gap:10px;padding:10px 6px}
+.q-info small{color:var(--lime);letter-spacing:2px;text-transform:uppercase;font-size:11.5px} .q-info h3{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:38px;letter-spacing:1px;line-height:1.05}
+.label{display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-top:8px} .label a{color:var(--lime);font-weight:400;font-size:12px}
+.size-pick{display:flex;flex-wrap:wrap;gap:8px}
+.size-pick button{min-width:52px;padding:10px 12px;border-radius:14px;border:1px solid var(--border);background:var(--glass);color:#fff;font-weight:600;cursor:pointer;transition:var(--t)}
+.size-pick button:hover{border-color:var(--lime)} .size-pick button.on{background:var(--grad);color:#0b0618;border-color:transparent}
+.q-actions{display:flex;gap:10px;margin-top:12px} .q-actions .btn-primary{flex:1}
+.q-perks{display:grid;gap:8px;margin-top:10px;font-size:13px;color:var(--muted)} .q-perks i{color:var(--lime);margin-right:8px}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,30px);z-index:500;padding:12px 22px;border-radius:999px;font-size:13.5px;opacity:0;pointer-events:none;transition:var(--t);background:rgba(16,9,34,.7)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* responsive */
+@media(max-width:1100px){.product-grid{grid-template-columns:repeat(3,1fr)}.cat-grid{grid-template-columns:repeat(3,1fr)}.nav-menu a{padding:8px 11px}}
+@media(max-width:992px){
+  .main-nav{display:none}.mobile-toggle{display:grid}
+  .offers-box,.size-wrap,.q-grid{grid-template-columns:1fr}
+  .review-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}
+  .look-grid{grid-template-columns:1fr 1fr;grid-template-rows:240px 240px 240px}.look.big{grid-row:auto;grid-column:span 2}
+  .hero-stats{display:none}
+}
+@media(max-width:768px){
+  section{padding:54px 0}
+  .hide-sm{display:none}
+  .header-actions{gap:6px}.icon-btn,.mobile-toggle{width:38px;height:38px;font-size:14px}.header-actions .icon-btn:first-child{display:none}
+  .logo-icon{width:38px;height:38px}.logo-title{font-size:26px}.header-container{padding-left:14px;padding-right:14px}
+  .site-header{border-radius:26px;top:8px}
+  .hero-slider{height:600px;border-radius:22px}
+  .slide-content{margin:0 14px;padding:24px 20px;max-width:none}
+  .slider-arrow{display:none}
+  .product-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .p-info{padding:10px 10px 14px} .p-info h3{font-size:13.5px} .p-price b{font-size:22px}
+  .quick-btn{display:none} .p-off{display:none}
+  .cat-grid{grid-template-columns:1fr 1fr;gap:12px} .cat-card:last-child{grid-column:span 2;aspect-ratio:16/9}
+  .shop-toolbar{border-radius:22px} .filter-bar{overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:4px} .filter-btn{white-space:nowrap}
+  .search-box{flex:1} .search-box input{width:100%} .tool-right{width:100%}
+  .review-grid,.footer-grid{grid-template-columns:1fr} .offers-box,.contact-box,.size-wrap{padding:24px 18px}
+  .offer-perks{grid-template-columns:1fr 1fr}
+  .look-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}
+  .modal-content{padding:14px}.q-info h3{font-size:32px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+
+<div class="bg-orbs" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+<div class="top-bar">
+  <div class="container top-bar-content">
+    <span><i class="fa-solid fa-fire"></i> Flat 40% OFF on first order · Code <b>YOUNG40</b></span>
+    <span class="hide-sm"><i class="fa-solid fa-truck-fast"></i> Free delivery above ₹999 · Easy 7-day returns</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-container">
+    <a href="#home" class="brand-logo">
+      <span class="logo-icon"><i class="fa-solid fa-shirt"></i></span>
+      <span class="logo-title">DHAN<span class="accent-text">USH</span></span>
+    </a>
+    <nav class="main-nav">
+      <ul class="nav-menu">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#lookbook">Lookbook</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" onclick="focusSearch()" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button class="icon-btn" onclick="showWishlist()" aria-label="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge-count" id="wishCount">0</span></button>
+      <button class="icon-btn cart-btn" onclick="toggleCart()" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge-count" id="cartCount">0</span></button>
+      <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-header"><span class="logo-title">DHAN<span class="accent-text">USH</span></span>
+    <button class="close-drawer" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button></div>
+  <ul class="drawer-menu">
+    <li><a href="#home" onclick="toggleMobileMenu()"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="#categories" onclick="toggleMobileMenu()"><i class="fa-solid fa-layer-group"></i> Categories</a></li>
+    <li><a href="#shop" onclick="toggleMobileMenu()"><i class="fa-solid fa-bag-shopping"></i> Shop All</a></li>
+    <li><a href="#lookbook" onclick="toggleMobileMenu()"><i class="fa-solid fa-camera-retro"></i> Lookbook</a></li>
+    <li><a href="#offers" onclick="toggleMobileMenu()"><i class="fa-solid fa-tags"></i> Offers</a></li>
+    <li><a href="#reviews" onclick="toggleMobileMenu()"><i class="fa-solid fa-star"></i> Reviews</a></li>
+  </ul>
+  <button class="btn btn-primary btn-block" onclick="toggleMobileMenu();toggleCart()"><i class="fa-solid fa-bag-shopping"></i> View Cart</button>
+</div>
+
+<!-- Hero -->
+<section id="home" class="hero-section">
+  <div class="hero-slider">
+    <div class="hero-slide active">
+      <img class="slide-img" src="https://images.unsplash.com/photo-1773235893731-90953d3a6934?q=80&w=1600&auto=format&fit=crop" alt="Stylish young men in streetwear">
+      <div class="slide-overlay"></div>
+      <div class="slide-content glass">
+        <span class="hero-badge"><i class="fa-solid fa-bolt"></i> New Drop · Autumn 2026</span>
+        <h1>Dress Loud.<br><span class="gradient-text">Move Free.</span></h1>
+        <p>Oversized tees, relaxed shirts, joggers, denim & hoodies – everything a young guy needs, under one roof.</p>
+        <div class="cta-group">
+          <a href="#shop" class="btn btn-primary btn-lg"><i class="fa-solid fa-bag-shopping"></i> Shop Now</a>
+          <a href="#categories" class="btn btn-outline btn-lg">Browse Categories</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <img class="slide-img" src="https://images.unsplash.com/photo-1766149756155-4a8122ad0732?q=80&w=1600&auto=format&fit=crop" alt="Two young men posing in a studio">
+      <div class="slide-overlay"></div>
+      <div class="slide-content glass">
+        <span class="hero-badge"><i class="fa-solid fa-tag"></i> Student Special</span>
+        <h2>Tees From <span class="gradient-text">₹499</span></h2>
+        <p>Heavy cotton, pre-shrunk, boxy fit. Pick any 3 tees and save extra 15%.</p>
+        <div class="cta-group">
+          <button class="btn btn-primary btn-lg" onclick="setFilter('tshirt');scrollToShop()"><i class="fa-solid fa-shirt"></i> Shop T-Shirts</button>
+          <button class="btn btn-outline btn-lg" onclick="copyCode('YOUNG40')"><i class="fa-regular fa-copy"></i> Copy YOUNG40</button>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <img class="slide-img" src="https://images.unsplash.com/photo-1772521239245-844fe3a0d66e?q=80&w=1600&auto=format&fit=crop" alt="Two young men standing outdoors">
+      <div class="slide-overlay"></div>
+      <div class="slide-content glass">
+        <span class="hero-badge"><i class="fa-solid fa-snowflake"></i> Winter Ready</span>
+        <h2>Hoodies &amp; <span class="gradient-text">Joggers</span> Combo</h2>
+        <p>Soft fleece, oversized fits, 6 colours. Buy the set and get free delivery.</p>
+        <div class="cta-group">
+          <button class="btn btn-primary btn-lg" onclick="setFilter('hoodie');scrollToShop()"><i class="fa-solid fa-hat-wizard"></i> Shop Hoodies</button>
+          <button class="btn btn-outline btn-lg" onclick="setFilter('lower');scrollToShop()">Shop Lowers</button>
+        </div>
+      </div>
+    </div>
+    <button class="slider-arrow prev-arrow" onclick="prevSlide()" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="slider-arrow next-arrow" onclick="nextSlide()" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="slider-dots" id="sliderDots"><span class="dot active" onclick="goSlide(0)"></span><span class="dot" onclick="goSlide(1)"></span><span class="dot" onclick="goSlide(2)"></span></div>
+
+    <div class="hero-stats glass">
+      <div><b>50K+</b><span>Happy Boys</span></div>
+      <div><b>4.8<i class="fa-solid fa-star"></i></b><span>Avg Rating</span></div>
+      <div><b>7 Day</b><span>Easy Return</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee glass"><div class="marquee-track">
+  <span>T-SHIRTS</span><i class="fa-solid fa-bolt"></i><span>SHIRTS</span><i class="fa-solid fa-bolt"></i><span>LOWERS</span><i class="fa-solid fa-bolt"></i><span>JEANS</span><i class="fa-solid fa-bolt"></i><span>HOODIES</span><i class="fa-solid fa-bolt"></i>
+  <span>T-SHIRTS</span><i class="fa-solid fa-bolt"></i><span>SHIRTS</span><i class="fa-solid fa-bolt"></i><span>LOWERS</span><i class="fa-solid fa-bolt"></i><span>JEANS</span><i class="fa-solid fa-bolt"></i><span>HOODIES</span><i class="fa-solid fa-bolt"></i>
+</div></div>
+
+<!-- Categories -->
+<section id="categories">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="sub-heading">SHOP BY CATEGORY</span>
+      <h2 class="fluid-h2">Everything For Young Boys</h2>
+      <p class="fluid-p">From college to weekend hangouts – pick your vibe.</p>
+    </div>
+    <div class="cat-grid" id="catGrid"></div>
+  </div>
+</section>
+
+<!-- Shop -->
+<section id="shop">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="sub-heading">THE COLLECTION</span>
+      <h2 class="fluid-h2">Trending Right Now</h2>
+    </div>
+    <div class="shop-toolbar glass">
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="tshirt">T-Shirts</button>
+        <button class="filter-btn" data-filter="shirt">Shirts</button>
+        <button class="filter-btn" data-filter="lower">Lowers</button>
+        <button class="filter-btn" data-filter="pant">Pants / Jeans</button>
+        <button class="filter-btn" data-filter="hoodie">Hoodies</button>
+      </div>
+      <div class="tool-right">
+        <label class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="searchInput" type="search" placeholder="Search t-shirt, jeans, hoodie…" oninput="renderProducts()"></label>
+        <select id="sortSelect" class="form-control" onchange="renderProducts()" aria-label="Sort">
+          <option value="featured">Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="discount">Biggest Discount</option>
+        </select>
+      </div>
+    </div>
+    <p class="result-count" id="resultCount"></p>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- Lookbook -->
+<section id="lookbook">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="sub-heading">LOOKBOOK</span>
+      <h2 class="fluid-h2">Style Inspiration</h2>
+      <p class="fluid-p">Real fits, real streets. Tap a look to shop similar.</p>
+    </div>
+    <div class="look-grid">
+      <a class="look big" onclick="setFilter('hoodie');scrollToShop()"><img loading="lazy" src="https://images.unsplash.com/photo-1628030328071-538b251a4455?q=80&w=900&auto=format&fit=crop" alt="Man in red and white jacket"><div class="look-cap glass"><b>Campus Layers</b><span>Hoodies &amp; jackets →</span></div></a>
+      <a class="look" onclick="setFilter('tshirt');scrollToShop()"><img loading="lazy" src="https://images.unsplash.com/photo-1605949405965-d49ada3f9189?q=80&w=700&auto=format&fit=crop" alt="Man in yellow t-shirt and black jeans"><div class="look-cap glass"><b>Sunny Tee Day</b><span>T-shirts →</span></div></a>
+      <a class="look" onclick="setFilter('pant');scrollToShop()"><img loading="lazy" src="https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?q=80&w=700&auto=format&fit=crop" alt="Man in white tee and black jeans"><div class="look-cap glass"><b>White &amp; Black</b><span>Jeans →</span></div></a>
+      <a class="look" onclick="setFilter('shirt');scrollToShop()"><img loading="lazy" src="https://images.unsplash.com/photo-1586231912972-d0970f9ce787?q=80&w=700&auto=format&fit=crop" alt="Man in black zip-up jacket and sunglasses"><div class="look-cap glass"><b>All Black Mood</b><span>Shirts →</span></div></a>
+      <a class="look" onclick="setFilter('lower');scrollToShop()"><img loading="lazy" src="https://images.unsplash.com/photo-1689044611227-3267fabaf76a?q=80&w=700&auto=format&fit=crop" alt="Man in front of colourful wall"><div class="look-cap glass"><b>Colour Pop</b><span>Lowers →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- Offers -->
+<section id="offers">
+  <div class="container">
+    <div class="offers-box glass">
+      <div class="offers-text">
+        <span class="sub-heading">LIMITED TIME</span>
+        <h2 class="fluid-h2">Buy 3, Get <span class="gradient-text">Extra 15% Off</span></h2>
+        <p class="fluid-p">Mix any t-shirts, shirts, lowers, jeans or hoodies. First order? Use the coupon below.</p>
+        <div class="coupon">
+          <span class="coupon-code" id="couponCode">YOUNG40</span>
+          <button class="btn btn-primary" onclick="copyCode('YOUNG40')"><i class="fa-regular fa-copy"></i> Copy Code</button>
+        </div>
+      </div>
+      <div class="offer-perks">
+        <div class="perk"><i class="fa-solid fa-truck-fast"></i><b>Free Delivery</b><span>Orders above ₹999</span></div>
+        <div class="perk"><i class="fa-solid fa-rotate-left"></i><b>7-Day Returns</b><span>No questions asked</span></div>
+        <div class="perk"><i class="fa-solid fa-hand-holding-dollar"></i><b>COD Available</b><span>Pay on delivery</span></div>
+        <div class="perk"><i class="fa-solid fa-shield-halved"></i><b>Premium Fabric</b><span>Pre-shrunk cotton</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Size guide -->
+<section id="sizes">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="sub-heading">FIND YOUR FIT</span>
+      <h2 class="fluid-h2">Quick Size Guide</h2>
+    </div>
+    <div class="size-wrap glass">
+      <div class="size-col"><h3><i class="fa-solid fa-shirt"></i> Tops (T-shirt / Shirt / Hoodie)</h3>
+        <table><tr><th>Size</th><th>Chest (in)</th><th>Length (in)</th></tr>
+        <tr><td>S</td><td>36–38</td><td>26</td></tr><tr><td>M</td><td>38–40</td><td>27</td></tr>
+        <tr><td>L</td><td>40–42</td><td>28</td></tr><tr><td>XL</td><td>42–44</td><td>29</td></tr><tr><td>XXL</td><td>44–46</td><td>30</td></tr></table></div>
+      <div class="size-col"><h3><i class="fa-solid fa-ruler"></i> Bottoms (Lower / Jeans)</h3>
+        <table><tr><th>Size</th><th>Waist (in)</th><th>Length (in)</th></tr>
+        <tr><td>28</td><td>28</td><td>38</td></tr><tr><td>30</td><td>30</td><td>39</td></tr>
+        <tr><td>32</td><td>32</td><td>40</td></tr><tr><td>34</td><td>34</td><td>41</td></tr><tr><td>36</td><td>36</td><td>41</td></tr></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="sub-heading">LOVED BY YOUNG GUYS</span>
+      <h2 class="fluid-h2">What Our Customers Say</h2>
+    </div>
+    <div class="review-grid">
+      <div class="review glass"><div class="stars">★★★★★</div><p>“Oversized tee ka fabric ekdum mast hai, wash ke baad bhi shrink nahi hua. Fit perfect!”</p><div class="who"><span class="avatar">R</span><div><b>Rohan, 19</b><small>Delhi</small></div></div></div>
+      <div class="review glass"><div class="stars">★★★★★</div><p>“Black jeans ki quality premium lagti hai, price me itna kaun deta hai. Friends ko bhi suggest kiya.”</p><div class="who"><span class="avatar">A</span><div><b>Aman, 21</b><small>Patna</small></div></div></div>
+      <div class="review glass"><div class="stars">★★★★☆</div><p>“Hoodie soft aur warm hai. Delivery 3 din me aa gayi aur size chart bilkul sahi tha.”</p><div class="who"><span class="avatar">K</span><div><b>Karan, 18</b><small>Lucknow</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter / contact -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-box glass">
+      <span class="sub-heading">JOIN THE CREW</span>
+      <h2 class="fluid-h2">Get Early Access To New Drops</h2>
+      <p class="fluid-p">Drop your number – we’ll WhatsApp you new arrivals and secret sale codes.</p>
+      <form class="news-form" onsubmit="handleNews(event)">
+        <input class="form-control" type="tel" id="newsPhone" required placeholder="Your WhatsApp number" pattern="[0-9+ ]{10,15}">
+        <button class="btn btn-primary" type="submit"><i class="fa-brands fa-whatsapp"></i> Notify Me</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <a href="#home" class="brand-logo footer-logo"><span class="logo-icon"><i class="fa-solid fa-shirt"></i></span><span class="logo-title">DHAN<span class="accent-text">USH</span></span></a>
+      <p>Streetwear &amp; everyday fits made for young boys. Quality fabric, honest prices.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://wa.me/919000000000" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Shop</h4><ul class="footer-links">
+      <li><a href="#shop" onclick="setFilter('tshirt')">T-Shirts</a></li><li><a href="#shop" onclick="setFilter('shirt')">Shirts</a></li>
+      <li><a href="#shop" onclick="setFilter('lower')">Lowers / Joggers</a></li><li><a href="#shop" onclick="setFilter('pant')">Pants / Jeans</a></li><li><a href="#shop" onclick="setFilter('hoodie')">Hoodies</a></li></ul></div>
+    <div class="footer-col"><h4>Help</h4><ul class="footer-links">
+      <li><a href="#sizes">Size Guide</a></li><li><a href="#offers">Offers &amp; Coupons</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4>
+      <p><i class="fa-solid fa-phone"></i> +91 90000 00000</p>
+      <p><i class="fa-solid fa-envelope"></i> hello@dhanush.example</p>
+      <p><i class="fa-solid fa-location-dot"></i> Your City, India</p></div>
+  </div>
+  <div class="footer-bottom"><div class="container text-center"><p>&copy; 2026 DHANUSH. Demo website – design sample.</p></div></div>
+</footer>
+
+<!-- Cart drawer -->
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-head"><h3><i class="fa-solid fa-bag-shopping"></i> Your Cart</h3><button class="close-drawer" onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button></div>
+  <div class="ship-progress"><p id="shipText"></p><div class="bar"><span id="shipBar"></span></div></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="coupon-row"><input class="form-control" id="couponInput" placeholder="Coupon code (YOUNG40)"><button class="btn btn-outline btn-sm" onclick="applyCoupon()">Apply</button></div>
+    <div class="sum-row"><span>Subtotal</span><b id="subTotal">₹0</b></div>
+    <div class="sum-row" id="discRow" hidden><span>Discount</span><b id="discTotal">-₹0</b></div>
+    <div class="sum-row total"><span>Total</span><b id="grandTotal">₹0</b></div>
+    <button class="btn btn-whatsapp btn-block btn-lg" onclick="checkoutWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</button>
+    <small class="muted">Demo checkout – order details open in WhatsApp.</small>
+  </div>
+</aside>
+
+<!-- Quick view modal -->
+<div class="modal-backdrop" id="quickModal"><div class="modal-content glass" id="quickBody"></div></div>
+
+<div class="toast glass" id="toast"></div>
+
+<script>
+/* DHANUSH – Young Boys Clothing Store (Glassmorphism demo) */
+const WA_NUMBER = '919000000000'; // <-- apna WhatsApp number yahan daalo
+const FREE_SHIP = 999;
+const U = (id, w = 800) => `https://images.unsplash.com/photo-${id}?q=80&w=${w}&auto=format&fit=crop`;
+const TOP = ['S', 'M', 'L', 'XL', 'XXL'], BOT = ['28', '30', '32', '34', '36'];
+
+const CATS = {
+  tshirt: { name: 'T-Shirts', icon: 'fa-shirt', img: '1581655353564-df123a1eb820', sizes: TOP },
+  shirt:  { name: 'Shirts', icon: 'fa-user-tie', img: '1624835567150-0c530a20d8cc', sizes: TOP },
+  lower:  { name: 'Lowers / Joggers', icon: 'fa-person-running', img: '1789110853719-2920fe512117', sizes: BOT },
+  pant:   { name: 'Pants / Jeans', icon: 'fa-ruler-vertical', img: '1542272604-787c3835535d', sizes: BOT },
+  hoodie: { name: 'Hoodies', icon: 'fa-mitten', img: '1615397587950-3cbb55f95b77', sizes: TOP }
+};
+
+const PRODUCTS = [
+  { id: 1,  cat: 'tshirt', name: 'Classic White Tee',        price: 499,  old: 799,  img: '1581655353564-df123a1eb820', badge: 'Bestseller', fit: 'Regular fit · 180 GSM cotton' },
+  { id: 2,  cat: 'tshirt', name: 'Midnight Oversized Tee',   price: 599,  old: 999,  img: '1627225925683-1da7021732ea', badge: 'New',        fit: 'Oversized · 220 GSM cotton' },
+  { id: 3,  cat: 'tshirt', name: 'Sunny Street Tee',         price: 549,  old: 899,  img: '1605949405965-d49ada3f9189', badge: '',           fit: 'Boxy fit · pre-shrunk' },
+  { id: 4,  cat: 'tshirt', name: 'Forest Green Tee',         price: 649,  old: 999,  img: '1523381294911-8d3cead13475', badge: '',           fit: 'Regular fit · soft combed cotton' },
+  { id: 5,  cat: 'shirt',  name: 'Sky Checks Shirt',         price: 999,  old: 1599, img: '1626557981101-aae6f84aa6ff', badge: 'Bestseller', fit: 'Slim fit · breathable cotton' },
+  { id: 6,  cat: 'shirt',  name: 'Oxford Blue Shirt',        price: 1099, old: 1699, img: '1624835567150-0c530a20d8cc', badge: '',           fit: 'Slim fit · oxford weave' },
+  { id: 7,  cat: 'shirt',  name: 'Earthy Brown Casual Shirt',price: 899,  old: 1399, img: '1566879770435-a11611073bf9', badge: 'Hot',        fit: 'Relaxed fit · cotton blend' },
+  { id: 8,  cat: 'shirt',  name: 'Lilac Button-Up',          price: 949,  old: 1499, img: '1603252110481-7ba873bf42ab', badge: 'New',        fit: 'Regular fit · pastel tone' },
+  { id: 9,  cat: 'lower',  name: 'Grey Stripe Joggers',      price: 799,  old: 1299, img: '1789110853719-2920fe512117', badge: 'Bestseller', fit: 'Relaxed · fleece-lined' },
+  { id: 10, cat: 'lower',  name: 'Crimson Joggers',          price: 849,  old: 1399, img: '1789110853644-4403e0f1e5fe', badge: 'New',        fit: 'Tapered · drawstring waist' },
+  { id: 11, cat: 'lower',  name: 'Cloud Grey Sweatpants',    price: 749,  old: 1199, img: '1789110520164-2389992e5d0f', badge: '',           fit: 'Straight · super soft' },
+  { id: 12, cat: 'pant',   name: 'Classic Blue Jeans',       price: 1199, old: 1899, img: '1542272604-787c3835535d',    badge: '',           fit: 'Regular · stretch denim' },
+  { id: 13, cat: 'pant',   name: 'Stealth Black Jeans',      price: 1299, old: 1999, img: '1718252540617-6ecda2b56b57', badge: 'Hot',        fit: 'Slim · stretch denim' },
+  { id: 14, cat: 'pant',   name: 'Indigo Slim Denim',        price: 1249, old: 1899, img: '1714143164072-7646ef5cb24d', badge: '',           fit: 'Slim · dark wash' },
+  { id: 15, cat: 'hoodie', name: 'Cloud White Hoodie',       price: 1199, old: 1799, img: '1615397587950-3cbb55f95b77', badge: 'New',        fit: 'Oversized · 320 GSM fleece' },
+  { id: 16, cat: 'hoodie', name: 'Steel Grey Hoodie',        price: 1099, old: 1699, img: '1611817757591-c3f345024273', badge: 'Bestseller', fit: 'Regular · brushed fleece' },
+  { id: 17, cat: 'hoodie', name: 'Teal Wave Hoodie',         price: 1249, old: 1899, img: '1617171594207-430a01a9da3f', badge: '',           fit: 'Oversized · kangaroo pocket' },
+  { id: 18, cat: 'hoodie', name: 'Shadow Black Hoodie',      price: 1299, old: 1999, img: '1677538537484-324385aff147', badge: 'Hot',        fit: 'Boxy · heavyweight fleece' }
+];
+
+let filter = 'all', cart = [], wish = [], coupon = null;
+const $ = (s) => document.querySelector(s);
+const inr = (n) => '₹' + Math.round(n).toLocaleString('en-IN');
+const off = (p) => Math.round((1 - p.price / p.old) * 100);
+
+/* ---------- safe storage ---------- */
+function load(k, d) { try { return JSON.parse(localStorage.getItem(k)) || d; } catch (e) { return d; } }
+function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+/* image with graceful fallback if a link fails */
+function img(id, alt, w) {
+  return `<img loading="lazy" src="${U(id, w)}" alt="${alt}" onerror="this.parentElement.classList.add('img-fail');this.remove()">`;
+}
+
+/* ---------- init ---------- */
+document.addEventListener('DOMContentLoaded', () => {
+  cart = load('dhanush_cart', []); wish = load('dhanush_wish', []);
+  renderCats(); renderProducts(); updateCart(); updateWish();
+  document.querySelectorAll('.filter-btn').forEach(b => b.addEventListener('click', () => setFilter(b.dataset.filter)));
+  document.querySelectorAll('.slide-img').forEach(i => i.addEventListener('error', () => i.remove()));
+  startSlider();
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+  $('#quickModal').addEventListener('click', e => { if (e.target.id === 'quickModal') closeQuick(); });
+});
+
+/* ---------- hero slider ---------- */
+let slide = 0, timer;
+function showSlide(i) {
+  const s = document.querySelectorAll('.hero-slide'), d = document.querySelectorAll('#sliderDots .dot');
+  slide = (i + s.length) % s.length;
+  s.forEach((x, k) => x.classList.toggle('active', k === slide));
+  d.forEach((x, k) => x.classList.toggle('active', k === slide));
+}
+function startSlider() { clearInterval(timer); timer = setInterval(() => showSlide(slide + 1), 5000); }
+function nextSlide() { showSlide(slide + 1); startSlider(); }
+function prevSlide() { showSlide(slide - 1); startSlider(); }
+function goSlide(i) { showSlide(i); startSlider(); }
+
+/* ---------- categories ---------- */
+function renderCats() {
+  $('#catGrid').innerHTML = Object.entries(CATS).map(([k, c]) => {
+    const n = PRODUCTS.filter(p => p.cat === k).length;
+    return `<a class="cat-card" onclick="setFilter('${k}');scrollToShop()"><div class="cat-img">${img(c.img, c.name, 600)}</div>
+      <div class="cat-info glass"><i class="fa-solid ${c.icon}"></i><div><b>${c.name}</b><small>${n} styles</small></div><span class="arrow"><i class="fa-solid fa-arrow-right"></i></span></div></a>`;
+  }).join('');
+}
+
+/* ---------- products ---------- */
+function setFilter(f) {
+  filter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === f));
+  renderProducts();
+}
+function scrollToShop() { document.getElementById('shop').scrollIntoView({ behavior: 'smooth' }); }
+function focusSearch() { scrollToShop(); setTimeout(() => $('#searchInput').focus(), 500); }
+
+function renderProducts() {
+  const q = ($('#searchInput').value || '').trim().toLowerCase(), sort = $('#sortSelect').value;
+  let list = PRODUCTS.filter(p => (filter === 'all' || p.cat === filter) &&
+    (!q || (p.name + ' ' + CATS[p.cat].name).toLowerCase().includes(q)));
+  if (sort === 'low') list.sort((a, b) => a.price - b.price);
+  if (sort === 'high') list.sort((a, b) => b.price - a.price);
+  if (sort === 'discount') list.sort((a, b) => off(b) - off(a));
+  $('#resultCount').textContent = `${list.length} product${list.length === 1 ? '' : 's'}`;
+  $('#productGrid').innerHTML = list.length ? list.map(p => `
+    <article class="product-card glass">
+      <div class="p-img">${img(p.img, p.name, 700)}
+        ${p.badge ? `<span class="p-badge">${p.badge}</span>` : ''}
+        <span class="p-off">-${off(p)}%</span>
+        <button class="wish-btn ${wish.includes(p.id) ? 'on' : ''}" onclick="toggleWish(${p.id})" aria-label="Wishlist"><i class="${wish.includes(p.id) ? 'fa-solid' : 'fa-regular'} fa-heart"></i></button>
+        <button class="quick-btn" onclick="openQuick(${p.id})"><i class="fa-regular fa-eye"></i> Quick View</button>
+      </div>
+      <div class="p-info"><small>${CATS[p.cat].name}</small><h3>${p.name}</h3>
+        <div class="p-price"><b>${inr(p.price)}</b><s>${inr(p.old)}</s></div>
+        <button class="btn btn-primary btn-sm btn-block" onclick="openQuick(${p.id})"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button></div>
+    </article>`).join('') : `<p class="empty glass">Koi product nahi mila. Kuch aur search karo!</p>`;
+}
+
+/* ---------- quick view ---------- */
+let qSize = null;
+function openQuick(id) {
+  const p = PRODUCTS.find(x => x.id === id), sizes = CATS[p.cat].sizes; qSize = null;
+  $('#quickBody').innerHTML = `
+    <button class="modal-close" onclick="closeQuick()"><i class="fa-solid fa-xmark"></i></button>
+    <div class="q-grid"><div class="q-img">${img(p.img, p.name, 800)}</div>
+    <div class="q-info"><small>${CATS[p.cat].name}</small><h3>${p.name}</h3>
+      <div class="p-price big"><b>${inr(p.price)}</b><s>${inr(p.old)}</s><span class="p-off inline">${off(p)}% OFF</span></div>
+      <p class="muted">${p.fit}</p>
+      <div class="label">Select Size <a href="#sizes" onclick="closeQuick()">Size guide</a></div>
+      <div class="size-pick" id="sizePick">${sizes.map(s => `<button onclick="pickSize('${s}',this)">${s}</button>`).join('')}</div>
+      <div class="q-actions"><button class="btn btn-primary btn-lg" onclick="addToCart(${p.id})"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+      <button class="btn btn-outline btn-lg" onclick="toggleWish(${p.id})"><i class="fa-regular fa-heart"></i></button></div>
+      <ul class="q-perks"><li><i class="fa-solid fa-truck-fast"></i> Free delivery above ₹999</li><li><i class="fa-solid fa-rotate-left"></i> 7-day easy returns</li></ul>
+    </div></div>`;
+  $('#quickModal').classList.add('active');
+}
+function closeQuick() { $('#quickModal').classList.remove('active'); }
+function pickSize(s, el) { qSize = s; document.querySelectorAll('#sizePick button').forEach(b => b.classList.remove('on')); el.classList.add('on'); }
+
+/* ---------- wishlist ---------- */
+function toggleWish(id) {
+  wish = wish.includes(id) ? wish.filter(x => x !== id) : [...wish, id];
+  save('dhanush_wish', wish); updateWish(); renderProducts();
+  toast(wish.includes(id) ? 'Wishlist me add ho gaya ♥' : 'Wishlist se hata diya');
+}
+function updateWish() { $('#wishCount').textContent = wish.length; $('#wishCount').style.display = wish.length ? 'grid' : 'none'; }
+function showWishlist() {
+  if (!wish.length) return toast('Wishlist abhi khali hai');
+  setFilter('all'); $('#searchInput').value = ''; scrollToShop();
+  $('#productGrid').innerHTML = PRODUCTS.filter(p => wish.includes(p.id)).map(p => `
+    <article class="product-card glass"><div class="p-img">${img(p.img, p.name, 700)}<button class="wish-btn on" onclick="toggleWish(${p.id})"><i class="fa-solid fa-heart"></i></button></div>
+    <div class="p-info"><small>${CATS[p.cat].name}</small><h3>${p.name}</h3><div class="p-price"><b>${inr(p.price)}</b><s>${inr(p.old)}</s></div>
+    <button class="btn btn-primary btn-sm btn-block" onclick="openQuick(${p.id})">Add to Cart</button></div></article>`).join('');
+  $('#resultCount').textContent = `Wishlist · ${wish.length} items`;
+}
+
+/* ---------- cart ---------- */
+function addToCart(id) {
+  if (!qSize) return toast('Pehle size select karo');
+  const k = id + '-' + qSize, ex = cart.find(c => c.key === k);
+  ex ? ex.qty++ : cart.push({ key: k, id, size: qSize, qty: 1 });
+  save('dhanush_cart', cart); updateCart(); closeQuick(); toggleCart(true); toast('Cart me add ho gaya ✓');
+}
+function chg(key, d) { const c = cart.find(x => x.key === key); if (!c) return; c.qty += d; if (c.qty < 1) cart = cart.filter(x => x.key !== key); save('dhanush_cart', cart); updateCart(); }
+function rm(key) { cart = cart.filter(x => x.key !== key); save('dhanush_cart', cart); updateCart(); }
+function totals() {
+  const sub = cart.reduce((s, c) => s + PRODUCTS.find(p => p.id === c.id).price * c.qty, 0);
+  const count = cart.reduce((s, c) => s + c.qty, 0);
+  let disc = 0; if (coupon === 'YOUNG40') disc = Math.min(sub * 0.4, 500); else if (count >= 3) disc = sub * 0.15;
+  return { sub, count, disc, total: sub - disc };
+}
+function updateCart() {
+  const t = totals();
+  $('#cartCount').textContent = t.count; $('#cartCount').style.display = t.count ? 'grid' : 'none';
+  $('#cartItems').innerHTML = cart.length ? cart.map(c => {
+    const p = PRODUCTS.find(x => x.id === c.id);
+    return `<div class="cart-item glass"><div class="ci-img">${img(p.img, p.name, 200)}</div>
+      <div class="ci-info"><b>${p.name}</b><small>Size ${c.size} · ${inr(p.price)}</small>
+      <div class="qty"><button onclick="chg('${c.key}',-1)">−</button><span>${c.qty}</span><button onclick="chg('${c.key}',1)">+</button></div></div>
+      <div class="ci-right"><b>${inr(p.price * c.qty)}</b><button class="rm" onclick="rm('${c.key}')"><i class="fa-regular fa-trash-can"></i></button></div></div>`;
+  }).join('') : `<div class="cart-empty"><i class="fa-solid fa-bag-shopping"></i><p>Cart khali hai</p><button class="btn btn-outline btn-sm" onclick="toggleCart();scrollToShop()">Shopping shuru karo</button></div>`;
+  $('#subTotal').textContent = inr(t.sub);
+  $('#discRow').hidden = !t.disc; $('#discTotal').textContent = '-' + inr(t.disc);
+  $('#grandTotal').textContent = inr(t.total);
+  const left = FREE_SHIP - t.total;
+  $('#shipText').innerHTML = !t.count ? `Free delivery ${inr(FREE_SHIP)} se upar 🚚` : left > 0 ? `Add <b>${inr(left)}</b> more for <b>FREE delivery</b>` : `🎉 Aapko <b>FREE delivery</b> mil gayi!`;
+  $('#shipBar').style.width = Math.min(100, (t.total / FREE_SHIP) * 100) + '%';
+}
+function applyCoupon() {
+  const v = $('#couponInput').value.trim().toUpperCase();
+  if (v === 'YOUNG40') { coupon = v; toast('YOUNG40 apply ho gaya (max ₹500 off)'); } else { coupon = null; toast('Invalid coupon'); }
+  updateCart();
+}
+function checkoutWhatsApp() {
+  if (!cart.length) return toast('Cart khali hai');
+  const t = totals();
+  const lines = cart.map(c => { const p = PRODUCTS.find(x => x.id === c.id); return `• ${p.name} (Size ${c.size}) × ${c.qty} = ${inr(p.price * c.qty)}`; }).join('\n');
+  const msg = `Hello DHANUSH! Mujhe ye order karna hai:\n\n${lines}\n\nSubtotal: ${inr(t.sub)}${t.disc ? `\nDiscount: -${inr(t.disc)}` : ''}\nTotal: ${inr(t.total)}\n\nName / Address:`;
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+/* ---------- ui helpers ---------- */
+function toggleCart(open) {
+  const d = $('#cartDrawer'), o = $('#overlay'), show = open === true ? true : !d.classList.contains('active');
+  d.classList.toggle('active', show); o.classList.toggle('active', show);
+}
+function toggleMobileMenu() { $('#mobileDrawer').classList.toggle('active'); }
+function closeAll() { $('#cartDrawer').classList.remove('active'); $('#overlay').classList.remove('active'); $('#mobileDrawer').classList.remove('active'); closeQuick(); }
+let tt; function toast(m) { const t = $('#toast'); t.textContent = m; t.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('show'), 2200); }
+function copyCode(c) { (navigator.clipboard ? navigator.clipboard.writeText(c) : Promise.reject()).then(() => toast(c + ' copy ho gaya'), () => toast('Code: ' + c)); }
+function handleNews(e) {
+  e.preventDefault();
+  const n = $('#newsPhone').value;
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hi DHANUSH! Mujhe new drops ki updates chahiye. Mera number: ' + n)}`, '_blank');
+  toast('Thanks! WhatsApp khul raha hai');
+}
+
+/* active nav on scroll */
+window.addEventListener('scroll', () => {
+  let cur = '';
+  document.querySelectorAll('section[id]').forEach(s => { if (scrollY >= s.offsetTop - 140) cur = s.id; });
+  document.querySelectorAll('.nav-menu a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+}, { passive: true });
+
+</script>
+</body>
+</html>
